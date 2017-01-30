@@ -5,7 +5,7 @@ import (
 )
 
 
-func encode(shardBitSize uint, typeBitSize uint, localBitSize uint) (func(uint64, uint64, uint64) uint64, error) {
+func Encode(shardBitSize uint, typeBitSize uint, localBitSize uint) (func(uint64, uint64, uint64) uint64, error) {
 	if shardBitSize + typeBitSize + localBitSize > 64 {
 		return nil, errors.New("total number of bits cannot exceed 64")
 	}
@@ -18,7 +18,7 @@ func encode(shardBitSize uint, typeBitSize uint, localBitSize uint) (func(uint64
 	}, nil
 }
 
-func decode(shardBitSize uint, typeBitSize uint, localBitSize uint) (func(uint64) (uint64, uint64, uint64), error) {
+func Decode(shardBitSize uint, typeBitSize uint, localBitSize uint) (func(uint64) (uint64, uint64, uint64), error) {
 	if shardBitSize + typeBitSize + localBitSize > 64 {
 		return nil, errors.New("total number of bits cannot exceed 64")
 	}

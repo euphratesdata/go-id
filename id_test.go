@@ -9,8 +9,8 @@ const seed = 0x12345
 const max = 10000
 
 func TestID(test *testing.T) {
-	encoder, _ := encode(16, 10, 36)
-	decoder, _ := decode(16, 10, 36)
+	encoder, _ := Encode(16, 10, 36)
+	decoder, _ := Decode(16, 10, 36)
 
 	// Test the example found in article.
 	ID := uint64(241294492511762325)
